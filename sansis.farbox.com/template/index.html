@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="main">
+    <!-- 0.修改VIEW转换为template(关键字替换)，增加template id -->
+        <div class="slider">        
+            <ul class="roll" id="template_roll">
+                <li class="roll-i" id="roll_Index">
+                    <a href=""><img src="../_image/主页/Roll/Index.jpg"></a>
+                </li>
+            </ul> 
+            <ul class="ctrl" id="template_ctrl">
+                <li class="ctrl-i" id="ctrl_Index">
+                    <a href="javascript:clearTimerswitchSlider(Index);">Index</a>
+                </li>
+            </ul>
+            <div class="roll-pre">
+                <a class="pre-bottom" href="javascript:clearTimerswitchSlider((Index+1)%data.lenght);"></a>
+            </div>
+            <div class="roll-next">
+                <a class="next-bottom" href="javascript:clearTimerswitchSlider(Index);"></a>
+            </div>           
+        </div>        
+        {% set products = get_data(type='post', limit=12) %}        
+        <div class="image-container">
+        {% for product in products %}
+            <div class="image-area">
+                {% set cover = product.metadata.cover %}
+                <a href="category/{{ product.metadata.category }}" title="{{ product.title }}">
+                    <div class="figure">
+                        <img src="{{ cover }}" alt="{{ product.title }}">
+                    </div>
+                    <p>{{ product.title }}</p>
+                </a>
+            </div>
+        {% endfor %} 
+        </div>
+    </div>
+{% endblock %}
+ 
+ 

@@ -1,0 +1,118 @@
+.detail {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-path {
+	font-size: 12px;
+    font-style: italic;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.main-pic {
+    margin-left: 30px;
+}
+
+.main-pic img {
+    width: 450px;
+    transition-duration: 1s;
+}
+.vice-pic {
+    display: flex;
+    flex-direction: column;
+
+}
+.vice-pic img {
+    margin-bottom: 20px;
+    opacity: 0.8;
+    border: 2px solid transparent;
+}
+
+.word {
+    width: 430px;
+}
+.price {
+	margin: 30px 0 0 0;
+}
+
+.buy-botton {
+	margin-top: 30px;
+}
+
+input.quantity {
+    width: 45px;
+    display: inline;
+    padding-left: 6px;
+    padding-right: 0;
+    height: 30px;
+    min-height: 30px;
+}
+
+.action-button {
+    background: #5592a4;
+    border: 1px solid #5592a4;
+    padding: 8px 20px;
+    text-align: center;
+    /* display: inline-block; */
+    font-size: 14px;
+    /* cursor: pointer; */
+    font-weight: bold;
+    font-smoothing: antialiased;
+    /* text-shadow: 0 1px rgba(0, 0, 0, 0.1); */
+    border-radius: 3px;
+    color: #fff !important;
+    transition: all .2s linear;
+    margin-bottom: 0;
+    margin-left: 20px;
+    /* outline: none; */
+}
+
+.word ul {
+    margin-left: 19px;
+    list-style: disc outside;
+}
+
+.intro {
+    margin: 30px 0;
+    color: #404040;
+    line-height: 1.6;
+}
+
+.word ul li {
+    margin: 10px 0;
+    color: #404040;
+}
+
+.reviews {
+    padding: 20px;
+    border: 1px solid #ececec;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+
+.reviews h2 {
+    border-top: 1px solid #aeaeb0;
+    border-bottom: 1px solid #aeaeb0;
+    text-align: center;
+    padding: 20px 0;
+    margin: 0;
+    width: 100%;
+}
+
+.share {
+    text-align: center;
+    line-height: 60px;
+    height: 60px;
+    border-bottom: 1px solid #aeaeb0;
+    border-top: 1px solid #aeaeb0;
+    font-size: 18px;
+}
+
+.turn {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0;
+    font-size: 14px;
+}

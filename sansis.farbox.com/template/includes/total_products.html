@@ -1,0 +1,13 @@
+<div class="image-container total-products">
+{% for product in products %}
+    <div class="image-area">
+        {% set cover = product.metadata.cover %}
+        <a href="{{ product.url }}" title="{{ product.title }}">
+            <div class="figure">
+                <img src="{{ cover }}" alt="{{ product.title }}">
+            </div>
+            <p>{{ product.title }}</p>
+        </a>
+    </div>
+{% endfor %} 
+</div>

@@ -1,0 +1,49 @@
+{% extends "base.html" %} {% block content %}
+<div class="main">
+    
+    <div class="product-path">
+        
+    </div>
+    <div class="detail">
+        {% set cover = post.metadata.cover %}
+        <div class="main-pic">
+            <img src="{{ cover }}" alt="{{ post.title }}">
+        </div>
+
+        {% set images = post.metadata.images %}  
+        <div class="vice-pic">
+        {% for image in images %}
+            <img src="{{ image }}" alt="{{ post.title }}" width="124px">
+        {% endfor %}
+        </div>
+
+        <div class="word">
+            <h1>{{ post.title }}</h1>
+            <hr>
+            <h1 class="price">{{ post.metadata.price }}</h1>
+            <div class="buy-botton">
+                <input type="number" min="1" size="2" class="quantity" name="quantity" id="quantity" value="1" max="453">
+                <button type="submit" name="add" class="action-button add_to_cart" data-label="Add to Cart"><span class="text">加入购物车</span></button>
+            </div>
+            <p class="intro">{{ post.content }}</p>
+            {% set tips = post.metadata.tips %}
+            <ul>
+            {% for tip in tips %}
+                <li>{{ tip }}</li>
+            {% endfor %}    
+            </ul>
+            <div class="reviews">
+                <h2>顾客评价</h2>
+                <div class="star"></div>
+                <p>没有评价</p>
+                <p class="write-comments"><a href="/">写评价</a></p>
+            </div>
+            <div class="share">欢迎分享</div>
+            <div class="turn">
+                <a href="/">上一个</a>
+                <a href="/">下一个</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}

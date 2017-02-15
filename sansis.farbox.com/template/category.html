@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block css %}
+<link href="/template/css/category.css?t=2" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+
+{% block content %}
+
+{% set is_albums = get_request_path(offset=1) == 'albums' %}
+{% set is_arts = get_request_path(offset=1) == 'arts' %}
+{% set is_market = get_request_path(offset=1) == 'market' %}
+{% set is_living = get_request_path(offset=2) == 'living' %}
+{% set is_kitchen = get_request_path(offset=2) == 'kitchen' %}
+
+{% if is_albums %}
+    <div class="menu sub-menu"><h2>相&nbsp;&nbsp;册</h2></div>
+	{% set photos = get_data(type='image', limit=20, path='_image/相册/', level=1) %}
+	<div class="main figure-container">
+	{% for photo in photos %}
+		<a href="/"><img src="{{ photo.url }}" alt="{{ photo.title }}"></a>	
+	{% endfor %}
+	</div>
+{% elif is_market %}
+	<div class="menu sub-menu"><h2>商&nbsp;&nbsp;店</h2></div>
+    {% set products = get_data(type='post', limit=50) %}
+    {% include 'includes/total_products.html' %}
+{% elif is_living %}
+	<div class="menu sub-menu"><h2>居&nbsp;&nbsp;家</h2></div>
+    {% set products = get_data(type='post', limit=50, tags='居家') %}
+    {% include 'includes/total_products.html' %}
+{% elif is_kitchen %}
+	<div class="menu sub-menu"><h2>厨&nbsp;&nbsp;房</h2></div>
+    {% set products = get_data(type='post', limit=50, tags='厨房') %}
+    {% include 'includes/total_products.html' %}
+{% else %}
+    <div class="menu sub-menu"><h2>作&nbsp;&nbsp;品</h2></div>
+	{% set arts = get_data(type='image', limit=20, path='_image/作品/', level=2) %}
+	<div class="main figure-container">
+	{% for art in arts %}
+		<a href="/"><img src="{{ art.url }}" alt="{{ art.title }}"></a>	
+	{% endfor %}
+	</div>
+{% endif %}
+
+{% endblock %}
+

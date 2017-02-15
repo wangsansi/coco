@@ -1,0 +1,28 @@
+h2 {
+	margin: 0;
+}
+.sub-menu {
+	border-top: none;
+	font-size: 18px;
+}
+.figure-container {
+	align-items: center;
+	margin-top: 20px;
+	margin-bottom: 60px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.figure-container img {
+	padding: 9px;
+	width: 368px;
+}
+.figure-container img:hover {
+	opacity: 0.8;
+    color: #fff;
+    transition-duration: .4s;
+}
+.total-products {
+	margin: 10px 60px;
+}

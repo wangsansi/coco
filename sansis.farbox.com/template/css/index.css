@@ -1,0 +1,395 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a {
+    font-family: "Microsoft Yahei", "微软雅黑", verdana;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav a,
+.main a,
+.total-products a {
+    color: #222222;
+}
+
+nav a:hover,
+.main a:hover,
+.total-products a:hover {
+    color: #888888;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.banner {
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 200px;
+    margin: 0 60px;
+    border-top: 1px solid #aeaeb0;
+    border-bottom: 1px solid #aeaeb0;
+}
+
+.menu > li > a {
+    padding: 20px;
+}
+
+.main {
+    margin: 10px 60px;
+}
+/*幻灯片区样式*/
+.slider .roll .roll-i,
+.slider .roll,
+.slider {
+    position: relative;
+    margin: 0;
+    height: 400px;
+    width:100%;
+    z-index: 1;
+}
+
+.slider .roll{
+    overflow: hidden;
+}
+/*幻灯片切换的样式*/
+.slider .roll .roll-i{
+    opacity: 0;
+    position: absolute;
+    right: 50%;
+    top: 0;
+    transition: all 0.2s ease-in-out;
+}
+.slider .roll .roll-i_active{
+    opacity: 1;
+    right: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.slider .roll .roll-i img,
+.slider .roll .roll-i a{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+/*控制按钮区样式*/
+.slider .ctrl {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 10px;
+    z-index: 9;
+}
+.slider .ctrl .ctrl-i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12px;
+    height: 12px;
+    margin: 8px;
+}
+
+.slider .ctrl .ctrl-i a {
+    color: transparent;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid transparent;
+    transition: all 0.2s ease-in-out;
+}
+/*当前控制按钮样式*/
+.slider .ctrl .ctrl-i_active a{
+    border: 1px solid #fff;
+    background: transparent;
+    width: 10px;
+    height: 10px;
+}
+/* hover 控制按钮的样式*/
+.slider .ctrl .ctrl-i a:hover {
+    border: 1px solid #fff;
+    background: transparent;
+    width: 10px;
+    height: 10px;
+    transition: all 0.2s ease-in-out;
+}
+/* 上下页按钮样式 */
+.roll-pre {
+    opacity:0;
+    position: absolute;
+    top: 175px;
+    left: -51px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    z-index: 3;
+    transition: all 0.2s ease-in-out;
+}
+
+.roll-next {
+    opacity:0;
+    position: absolute;
+    top: 175px;
+    right: -51px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    z-index: 3;
+    transition: all 0.2s ease-in-out;
+}
+/*上下页按钮hover*/
+.slider:hover .roll-pre {
+    opacity:1;
+    position: absolute;
+    top: 175px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    z-index: 3;
+    transition: all 0.2s ease-in-out;
+}
+.slider:hover .roll-next {
+    opacity:1;
+    position: absolute;
+    top: 175px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    z-index: 3;
+    transition: all 0.2s ease-in-out;
+}
+
+
+/*
+
+.roll ul {
+    overflow: hidden;
+}
+
+.slide .ctrl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1160px;
+    z-index: 3;
+    position: absolute;
+    bottom: 10px;
+}
+
+.ctrl li {
+    width: 32px;
+}
+
+.ctrl a {
+    display: inline-block;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    cursor: pointer;
+    background: #fff;
+    color: #fff;
+    border: 1px solid transparent;
+    margin: 8px;
+    transition: all 0.2s ease-in-out;
+}
+
+.ctrl a:hover {
+    border: 1px solid #fff;
+    background: transparent;
+    width: 10px;
+    height: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.ctrl .focus a {
+    border: 1px solid #fff;
+    background: transparent;
+    width: 10px;
+    height: 10px;
+}
+
+.roll-pre {
+    position: absolute;
+    top: 175px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 50%;
+    z-index: 3;
+}
+
+.roll-next {
+    position: absolute;
+    top: 175px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 50%;
+    z-index: 3;
+}
+
+.front img {
+    width: 100%;
+    transition-duration: 1s;
+    float: left;
+    margin-right: -100%;
+    position: relative;
+    opacity: 1;
+    display: block;
+    z-index: 2;
+}
+
+.back img {
+    width: 100%;
+    transition-duration: 1s;
+    float: left;
+    margin-right: -100%;
+    position: relative;
+    opacity: 0;
+    display: block;
+    z-index: 1;
+}*/
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.image-area {
+    padding-top: 30px;
+}
+
+.image-area:hover .figure {
+    opacity: 0.9;
+    color: #fff;
+    transition-duration: .4s;
+}
+
+.figure {
+    width: 280px;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.figure img {
+    max-width: 280px;
+    max-height: 280px;
+}
+
+.image-area p {
+    text-align: center;
+}
+
+footer {
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    background: #f5f5f5;
+    color: #888888;
+}
+
+.left {
+    width: 200px;
+}
+
+.middle {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.left li {
+    padding: 0 0 15px 0;
+}
+
+.right {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="email"] {
+    height: 30px;
+    width: 400px;
+}
+
+input[type="submit"] {
+    margin: 20px auto;
+    width: 80px;
+    height: 40px;
+}
+
+.market,
+.albums,
+.arts {
+    display: none;
+}
+
+.menu-market,
+.menu-arts,
+.menu-albums {
+    position: relative;
+}
+
+.menu-market:hover .market,
+.menu-arts:hover .arts,
+.menu-albums:hover .albums {
+    display: block;
+    position: absolute;
+    left: 20px;
+    top: 28px;
+    background: #f5f5f5;
+    border: solid 1px #ddd;
+    border-bottom-color: #bbb;
+    z-index: 100;
+    width: 140px;
+}
+
+.market li,
+.arts li,
+.albums li {
+    font-size: 14px;
+    padding: 10px;
+    background: none;
+    text-align: left;
+}
