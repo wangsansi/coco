@@ -14,12 +14,13 @@
                 </li>
             </ul>
             <div class="roll-pre">
-                <a class="pre-bottom" href="javascript:clearTimerswitchSlider((Index+1)%data.lenght);"></a>
+                <a class="pre-bottom" href="javascript:clearTimerswitchPreSlider();"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></a>
             </div>
             <div class="roll-next">
-                <a class="next-bottom" href="javascript:clearTimerswitchSlider(Index);"></a>
+                <a class="next-bottom" href="javascript:clearTimerswitchNextSlider();"><i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i></a>
             </div>           
-        </div>        
+        </div> 
+        
         {% set products = get_data(type='post', limit=12) %}        
         <div class="image-container">
         {% for product in products %}

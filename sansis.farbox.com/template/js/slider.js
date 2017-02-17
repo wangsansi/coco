@@ -86,6 +86,18 @@ function clearTimerswitchSlider(index) {
 	clearInterval(timer);
 	startSwitch(index);	
 }
+//9. 上一张
+function clearTimerswitchNextSlider(){	
+	clearInterval(timer);
+	var next_index = (cur_index + 1) % data.length;
+	startSwitch(next_index);	
+}
+//10.下一张
+function clearTimerswitchPreSlider(){	
+	clearInterval(timer);
+	var pre_index = (cur_index + data.length -1) % data.length;
+	startSwitch(pre_index);	
+}
 
 // 4.定义何时处理幻灯片输出（）
 window.onload = function(){

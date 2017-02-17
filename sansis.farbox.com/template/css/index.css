@@ -68,7 +68,7 @@ ul {
 .slider {
     position: relative;
     margin: 0;
-    height: 400px;
+    height: 380px;
     width:100%;
     z-index: 1;
 }
@@ -146,26 +146,29 @@ ul {
     opacity:0;
     position: absolute;
     top: 175px;
-    left: -51px;
+    left: -200px;
     width: 50px;
     height: 50px;
     border: 1px solid #fff;
     border-radius: 50%;
     z-index: 3;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    
 }
+
 
 .roll-next {
     opacity:0;
     position: absolute;
     top: 175px;
-    right: -51px;
+    right: -200px;
     width: 50px;
     height: 50px;
     border: 1px solid #fff;
     border-radius: 50%;
     z-index: 3;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.4s ease-in-out;
+   
 }
 /*上下页按钮hover*/
 .slider:hover .roll-pre {
@@ -178,7 +181,8 @@ ul {
     border: 1px solid #fff;
     border-radius: 50%;
     z-index: 3;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    
 }
 .slider:hover .roll-next {
     opacity:1;
@@ -190,101 +194,28 @@ ul {
     border: 1px solid #fff;
     border-radius: 50%;
     z-index: 3;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    
 }
-
-
-/*
-
-.roll ul {
-    overflow: hidden;
-}
-
-.slide .ctrl {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 1160px;
-    z-index: 3;
-    position: absolute;
-    bottom: 10px;
-}
-
-.ctrl li {
-    width: 32px;
-}
-
-.ctrl a {
+.pre-bottom,
+.next-bottom {
+    width: 52px;
+    height: 52px;
     display: inline-block;
-    border-radius: 50%;
-    width: 8px;
-    height: 8px;
-    cursor: pointer;
-    background: #fff;
-    color: #fff;
-    border: 1px solid transparent;
-    margin: 8px;
-    transition: all 0.2s ease-in-out;
-}
-
-.ctrl a:hover {
-    border: 1px solid #fff;
-    background: transparent;
-    width: 10px;
-    height: 10px;
-    transition: all 0.2s ease-in-out;
-}
-
-.ctrl .focus a {
-    border: 1px solid #fff;
-    background: transparent;
-    width: 10px;
-    height: 10px;
-}
-
-.roll-pre {
-    position: absolute;
-    top: 175px;
-    left: 20px;
-    width: 50px;
-    height: 50px;
-    border: 1px solid black;
-    border-radius: 50%;
-    z-index: 3;
-}
-
-.roll-next {
-    position: absolute;
-    top: 175px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    border: 1px solid black;
-    border-radius: 50%;
-    z-index: 3;
-}
-
-.front img {
-    width: 100%;
-    transition-duration: 1s;
-    float: left;
-    margin-right: -100%;
     position: relative;
-    opacity: 1;
-    display: block;
-    z-index: 2;
 }
-
-.back img {
-    width: 100%;
-    transition-duration: 1s;
-    float: left;
-    margin-right: -100%;
-    position: relative;
-    opacity: 0;
-    display: block;
-    z-index: 1;
-}*/
+.pre-bottom i {
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    color: white;
+}
+.next-bottom i{
+    position: absolute;
+    left: 16px;
+    top: 10px;
+    color: white;
+}
 
 .image-container {
     display: flex;
@@ -350,7 +281,7 @@ footer {
 
 input[type="email"] {
     height: 30px;
-    width: 400px;
+    width: 200px;
 }
 
 input[type="submit"] {
@@ -392,4 +323,51 @@ input[type="submit"] {
     padding: 10px;
     background: none;
     text-align: left;
+}
+@media only screen and (max-device-width: 736px) {
+    .banner {
+        height:100px;
+    }
+    .main {
+        margin: 20px 10px;
+    }
+    .medium-menu {
+        display: flex;
+        justify-content: space-around;
+        padding: 10px; 
+        margin: 0 10px;
+        border-top: 1px solid #aeaeb0;
+        border-bottom: 1px solid #aeaeb0;
+    } 
+    .menu {
+        display:none;
+    }
+    .slider .roll .roll-i,
+    .slider .roll,
+    .slider {
+        height: 160px;
+    }
+    .roll-pre,
+    .roll-next {
+        display: none;
+    }
+    .ctrl {
+        display: none;
+    }
+
+    footer {
+        display:flex;
+        flex-direction:column;
+    }
+    
+    .figure {
+        width:160px; 
+        height:160px;
+    }
+    .figure img {
+        width:160px;
+    }
+    .image-area p {
+        font-size:14px;
+    }
 }

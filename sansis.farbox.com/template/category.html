@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% block css %}
 <link href="/template/css/category.css?t=2" rel="stylesheet" type="text/css" />
+<link href="/template/css/lightbox.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/template/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="/template/js/lightbox.min.js"></script>
+
 {% endblock %}
 
 
@@ -17,7 +21,7 @@
 	{% set photos = get_data(type='image', limit=20, path='_image/相册/', level=1) %}
 	<div class="main figure-container">
 	{% for photo in photos %}
-		<a href="/"><img src="{{ photo.url }}" alt="{{ photo.title }}"></a>	
+	    <a href="{{ photo.url }}" data-lightbox="roadtrip" data-title="{{ photo.title }}"><img src="{{ photo.url }}" alt="{{ photo.title }}"></a>	
 	{% endfor %}
 	</div>
 {% elif is_market %}
@@ -37,7 +41,8 @@
 	{% set arts = get_data(type='image', limit=20, path='_image/作品/', level=2) %}
 	<div class="main figure-container">
 	{% for art in arts %}
-		<a href="/"><img src="{{ art.url }}" alt="{{ art.title }}"></a>	
+		<a href="{{ art.url }}" data-lightbox="roadtrip" data-title="{{ art.title }}"><img src="{{ art.url }}" alt="{{ art.title }}"></a>	
+		
 	{% endfor %}
 	</div>
 {% endif %}

@@ -1,10 +1,16 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} 
+{% block css %} 
+<link href="/template/share/dist/css/share.min.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/template/share/dist/js/social-share.min.js"></script>
+{% endblock %}
+{% block content %}
 <div class="main">
     
     <div class="product-path">
         
     </div>
     <div class="detail">
+        {% set posts = get_data(type='post', tags=tags) %}
         {% set cover = post.metadata.cover %}
         <div class="main-pic">
             <img src="{{ cover }}" alt="{{ post.title }}">
@@ -38,11 +44,15 @@
                 <p>没有评价</p>
                 <p class="write-comments"><a href="/">写评价</a></p>
             </div>
-            <div class="share">欢迎分享</div>
-            <div class="turn">
-                <a href="/">上一个</a>
-                <a href="/">下一个</a>
+            <div class="share">
+                <div class="social-share" data-initialized="true">
+                    <a href="#" class="social-share-icon icon-weibo"></a>
+                    <a href="#" class="social-share-icon icon-qq"></a>
+                    <a href="#" class="social-share-icon icon-wechat"></a>
+                    <a href="#" class="social-share-icon icon-douban"></a>
+                </div>
             </div>
+            
         </div>
     </div>
 </div>
