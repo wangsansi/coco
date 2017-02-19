@@ -1,6 +1,6 @@
-h2 {
-	margin: 0;
-}
+.sub-menu h2 {
+    margin: 0;
+} 
 .sub-menu {
 	border-top: none;
 	font-size: 18px;
@@ -25,4 +25,38 @@ h2 {
 }
 .total-products {
 	margin: 10px 60px;
+}
+
+@media (max-width: 999px){
+	.sub-menu {
+		border-top: none;
+		font-size: 14px;
+	}
+	
+	.figure-container {
+		justify-content:center;
+	}
+	.figure-container img {
+		width:100%;
+		padding:0;
+	}
+
+}
+@media only screen and (max-device-width: 414px) {
+	.sub-menu {
+		border-top: none;
+		font-size: 14px;
+		padding: 10px;
+		margin: 0 10px;
+	}
+	.total-products {
+		margin:20px 10px;
+	}
+	.figure-container {
+		justify-content:center;
+	}
+	.figure-container img {
+		width:100%;
+		padding:0;
+	}
 }

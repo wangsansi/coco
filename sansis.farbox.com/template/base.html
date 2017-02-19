@@ -4,15 +4,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href="/template/css/index.css?t=0" rel="stylesheet" type="text/css" />
-    <link href="/template/css/product.css?t=3" rel="stylesheet" type="text/css" />
+    <link href="/template/css/index.css?t=5" rel="stylesheet" type="text/css" />
+    <link href="/template/css/product.css?t=4" rel="stylesheet" type="text/css" />
     <link href="/template/css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" >
-    {% block css %} {% endblock %}
-    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script type="text/javascript" src="/template/js/main.js"></script>
-    <script type="text/javascript" src="/template/js/slider.js?t=1"></script>
-
-    
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>  
+    {% block cssjs %} {% endblock %}     
     <title>{{ site.title }}</title>
 </head>
 
@@ -37,36 +33,38 @@
                 <li class="menu-albums">
                     <a href="/category/albums">相册</a>
                 </li>
-                <li><a href="">关于</a></li>
             </ul>
-            <ul class="medium-menu">
-                <li>导航</li>
-            </ul>
+           
         </nav>
     </header>
     {% block content %} 
     {% endblock %} 
     <footer>
-        <div class="left">
-            <h2 class="info">更多信息</h2>
-            <ul>
-                <li><a href="/">帮助中心</a></li>
-                <li><a href="/">联系我们</a></li>
-                <li><a href="/">售后服务</a></li>
-                <li><a href="/">配送与验收</a></li>
-                <li><a href="/">商务合作</a></li>
-            </ul>
+        <div class="footer-main">
+            <div class="left">
+                <h2 class="info">更多信息</h2>
+                <ul>
+                    <li><a href="#">帮助中心</a></li>
+                    <li><a href="#">联系我们</a></li>
+                    <li><a href="#">售后服务</a></li>
+                    <li><a href="#">配送与验收</a></li>
+                    <li><a href="#">商务合作</a></li>
+                </ul>
+            </div>
+            <div class="middle">
+                <h2>电子邮件订阅</h2>
+                <p>在下面输入你的邮箱地址以便第一时间获取更新</p>
+                <input type="email" name="user_email" />
+                <input type="submit" />
+                
+            </div>
+            <div class="right">
+                <h2>扫码关注Sansis</h2>
+                <img src="{{ site.url }}/_image/主页/微信/sansis.jpeg" width="150px">
+            </div>
         </div>
-        <div class="middle">
-            <h2>电子邮件订阅</h2>
-            <p>在下面输入你的邮箱地址以便第一时间获取更新</p>
-            <input type="email" name="user_email" />
-            <input type="submit" />
-            
-        </div>
-        <div class="right">
-            <h2>扫码关注Sansis</h2>
-            <img src="{{ site.url }}/_image/主页/微信/sansis.jpeg" width="150px">
+        <div class="copyright">
+            <p>© <a href="/">{{ site.title }}</a>.Powered by <a href="http://www.farbox.com">FarBox</a>.Theme by <a href="http://shisi.me">王三思</a>.</p>
         </div>
     </footer>
 </body>

@@ -1,28 +1,25 @@
 {% extends "base.html" %} 
-{% block css %} 
+{% block cssjs %} 
 <link href="/template/share/dist/css/share.min.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/template/js/post.js"></script>
 <script type="text/javascript" src="/template/share/dist/js/social-share.min.js"></script>
 {% endblock %}
 {% block content %}
 <div class="main">
-    
-    <div class="product-path">
-        
-    </div>
     <div class="detail">
-        {% set posts = get_data(type='post', tags=tags) %}
-        {% set cover = post.metadata.cover %}
-        <div class="main-pic">
-            <img src="{{ cover }}" alt="{{ post.title }}">
+        <div class="pic-area">
+            {% set posts = get_data(type='post', tags=tags) %}
+            {% set cover = post.metadata.cover %}
+            <div class="main-pic">
+                <img src="{{ cover }}" alt="{{ post.title }}">
+            </div>
+            {% set images = post.metadata.images %}  
+            <div class="vice-pic">
+            {% for image in images %}
+                <img src="{{ image }}" alt="{{ post.title }}" width="124px">
+            {% endfor %}
+            </div>
         </div>
-
-        {% set images = post.metadata.images %}  
-        <div class="vice-pic">
-        {% for image in images %}
-            <img src="{{ image }}" alt="{{ post.title }}" width="124px">
-        {% endfor %}
-        </div>
-
         <div class="word">
             <h1>{{ post.title }}</h1>
             <hr>
@@ -40,8 +37,6 @@
             </ul>
             <div class="reviews">
                 <h2>顾客评价</h2>
-                <div class="star"></div>
-                <p>没有评价</p>
                 <p class="write-comments"><a href="/">写评价</a></p>
             </div>
             <div class="share">
